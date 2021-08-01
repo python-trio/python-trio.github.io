@@ -3,7 +3,7 @@ name: Publish Site
 on:
   push:
     branches:
-      - master
+      - default
 
 jobs:
   build-deploy:
