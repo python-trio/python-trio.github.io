@@ -1,20 +1,33 @@
-name: Publish Site
+name: GitHub Pages
 
 on:
   push:
     branches:
       - default
+  pull_request:
 
 jobs:
-  build-deploy:
-    runs-on: ubuntu-latest
-
+  deploy:
+    runs-on: ubuntu-20.04
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
     steps:
-      - name: Checkout Repo
-        uses: actions/checkout@master
+      - uses: actions/checkout@v2
         with:
-          submodules: true
-      - name: Publish Site
-        uses: chabad360/hugo-gh-pages@master
+          submodules: true 
+          fetch-depth: 0
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
         with:
-          githubToken: ${{ secrets.PERSONAL_TOKEN }}
+          hugo-version: '0.85.0'
+
+      - name: Build
+        run: hugo --minify
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.ref == 'refs/heads/default' }}
+        with:
+          github_token: ${{ secrets.PERSONAL_TOKEN }}
+          publish_dir: ./public
