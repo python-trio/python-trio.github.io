@@ -1,0 +1,15 @@
+baseURL = "https://python-trio.github.io/"
+languageCode = "en-gb"
+title = "Trio"
+theme = "hyde"
+
+
+[params]
+  description = "A friendly Python library for async concurrency and I/O "
+  copyright = "All content licenced under CC-BY 4.0 unless otherwise indicated."
+
+[menus]
+  main = [
+  	{Name = "Docs", URL = "https://trio.readthedocs.io/en/latest/"},
+  	{Name = "GitHub", URL = "https://github.com/python-trio/trio"}
+  ]
