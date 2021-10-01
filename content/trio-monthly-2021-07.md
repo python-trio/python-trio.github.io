@@ -3,7 +3,7 @@ title: Trio Monthly - 2021/07
 date: 2021-08-01T00:00:00Z
 draft: false
 tags:
- - trio-weekly
+ - trio-monthly
  - trio
 ---
 
@@ -53,7 +53,7 @@ The second library featured is the Tractor library. As the author puts it:
 > For those who haven't heard of us, ``tractor`` is a multi-processing-runtime library which applies
 > structured concurrency from the ground up on process managment and IPC. We had our first alpha 
 > release this past Feb. and now our second this Aug. 1st 🥳.
-
+>
 > The quick and dirty summary for this release is:
 > - Updated our unidirectional streaming APIs to be more `async_generator.aclosing()`-like
 > - Vastly improved our actor reaping during cancellation and error propagation for the 
@@ -72,3 +72,6 @@ The second library featured is the Tractor library. As the author puts it:
 >
 > For more details see our [new release](https://github.com/goodboy/tractor/blob/master/NEWS.rst).
 
+## Conclusion
+
+That's all we have for this month. Onto August! 
